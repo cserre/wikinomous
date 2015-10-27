@@ -1,0 +1,6 @@
+<div class="low-border">
+  <h2><%= @article.title %>
+  <%= link_to ("<i class='fa fa-pencil'></i>").html_safe, edit_article_path(@article) %>
+  <%= link_to ("<i class='fa fa-trash'></i>").html_safe, article_path(@article), method: :delete %></h2>
+</div>
+<p><%= markdown @article.content %></p>

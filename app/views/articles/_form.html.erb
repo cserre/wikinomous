@@ -1,0 +1,25 @@
+<%= form_for(@article) do |t| %>
+  <div>
+    <p><%= t.label :title %></p>
+    <p><%= t.text_field :title, class: "nice-border small-box" %></p>
+    <p><%= t.label :content %></p>
+  </div>
+  <div class="ace-editor big-box">
+    <div id="editor"></div>
+    <%= t.text_area(:content, id:"area_description", class: 'hidden') %>
+  </div>
+  <div>
+    <p><%= t.submit class: "my_btn" %></p>
+  </div>
+<% end %>
+
+<script>
+  var editor = ace.edit("editor");
+  editor.getSession().setMode("ace/mode/javascript");
+  editor.getSession().setUseWrapMode(true);
+  editor.setValue($('#area_description').text());
+  editor.getSession().on('change', function(){
+    $('#area_description').text(editor.getValue());
+  });
+
+</script>

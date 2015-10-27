@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# require 'faker'
+
+# TODO: Write a seed to insert 100 posts in the database
+
+10.times do
+  article = Article.new(
+    title: Faker::Lorem.sentence,
+    content: Faker::Lorem.paragraph(10))
+  article.save
+end

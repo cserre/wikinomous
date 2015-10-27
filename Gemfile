@@ -45,3 +45,12 @@ group :development do
   gem 'spring'
 end
 
+# Faker gem
+gem 'faker'
+
+# Redcarpet
+gem 'redcarpet'
+
+#Ace rails
+gem 'ace-rails-ap'
+
